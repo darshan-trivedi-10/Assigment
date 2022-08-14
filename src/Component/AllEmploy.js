@@ -107,6 +107,7 @@ export default function AllEmploy() {
     }, [])
 
     function EmployPage(employ) {
+        console.log(employ.manager_id);
         navigate('/employDetails', { state: employ });
     }
 
@@ -136,10 +137,9 @@ export default function AllEmploy() {
         searchFilter(currText);
     }
 
-    let counter = 1;
     return (
         <>
-        
+
             <Box sx={{ flexGrow: 1, my: -1 }}>
                 <AppBar position="static">
                     <Toolbar>
@@ -188,7 +188,7 @@ export default function AllEmploy() {
                     <TableBody>
                         {
                             allEmploy.map((empoly) => (
-                                <StyledTableRow key={"EMP" + counter} >
+                                <StyledTableRow key={empoly.id} >
                                     <StyledTableCell component="th" scope="row" style={hoveredStyle} onClick={() => EmployPage(empoly)}>
                                         <Link to='/employDetails' >
                                             {empoly.id}

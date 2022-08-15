@@ -67,7 +67,7 @@ const ChildEmploy = ({ allEmploy, employ, child }) => {
     return (
         <Accordion expanded={expanded === 'panel' + employ.id} onChange={handleChange('panel' + employ.id)} position="relative" sx={{ width: '75%', mb: "0.5rem" }}>
             <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-                <Typography> {'Manager Id - '}{employ.id}</Typography>
+                <Typography> {(child.length === 0 ? 'Employ Id - ' : 'Manager Id - ')} {employ.id}</Typography>
             </AccordionSummary>
             {
                 child.length > 0 && (
